@@ -1,0 +1,6 @@
+thefriending/manual
+thefriending/user-guide
+thefriending/friending
+thefriending/landing
+thefriending/website
+thefriending/readme

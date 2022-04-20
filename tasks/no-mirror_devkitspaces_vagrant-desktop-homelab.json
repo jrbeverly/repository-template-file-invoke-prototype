@@ -1,0 +1,8 @@
+{
+  "branch": "gitlab-mirror-cleanup",
+  "script": "actions/gitlab-cleanup.sh",
+  "title": "build(mirror): Replace mirror with repo namespace",
+  "body": "Remove the explicit gitlab mirror.\n\nThe repository definition schema (`.repository/index.json`) will be updated to include a `project` field which will scope the namespace. This will remove the need for the .gitlab mirror directory, as mirrored projects will be pinned to a controlled namespace.",
+  "labels": "build,chore",
+  "repository": "devkitspaces/vagrant-desktop-homelab"
+}

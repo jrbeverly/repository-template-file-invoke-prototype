@@ -1,0 +1,10 @@
+{
+  "branch": "repository-yml-schema",
+  "script": "actions/repository-yaml.sh",
+  "title": "docs(repository): Switch to new repository schema",
+  "body": "Adopt new repository schema, switching to YAML.\n\nThis removes the old JSON + repository schema, switching to using YAML and a project oriented schema. The new project field makes the root of a project clear.\n\nAdditionally the language field has been removed as it was a fairly dynamic field.",
+  "repository": "${line}",
+  "labels": "documentation,chore",
+  "project": "${project_set}",
+  "namespace": "SETME"
+}

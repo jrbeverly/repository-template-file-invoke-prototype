@@ -1,0 +1,8 @@
+{
+  "branch": "format-specs",
+  "script": "actions/mass-format.sh",
+  "title": "chore(format): Format the entire codebase",
+  "body": "Format the codebase to match expectations of default prettier\n\nFormat all of the files in the repository to match common style. This should simplify any automated code changes, as it is likely these would format the code as part of modification.",
+  "labels": "chore",
+  "repository": "${line}"
+}

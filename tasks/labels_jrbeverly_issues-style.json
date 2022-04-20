@@ -1,0 +1,8 @@
+{
+  "branch": "repo-label-sync",
+  "script": "actions/labels.sh",
+  "title": "docs(repository): Synchronize repository labels",
+  "body": "Synchronize the labels in this repository with authoritative source.\n\nStandardize the github labels to facilitate automation across all the repositories. This is done as part of some testings work for developing tooling that verifies constraints on datasets (git repos), and if possible it will resolve the invalid constraint.",
+  "repository": "jrbeverly/issues-style",
+  "labels": ""
+}

@@ -1,0 +1,7 @@
+xplatformer/xplatformer
+xplatformer/xgamelib
+xplatformer/xsamples
+xplatformer/vagrant-desktop-x11
+xplatformer/docker-xwindow
+xplatformer/xplatformer-workspace
+xplatformer/readme

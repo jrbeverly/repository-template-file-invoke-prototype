@@ -1,0 +1,47 @@
+name: Repository Customizations Work Tap
+on:
+  workflow_dispatch:
+  # push:
+  #   paths:
+  #     - .github/workflows/main.yml
+#   schedule:
+#     - cron: "1 0 * * *"
+#     - cron: "19 0 * * *"
+#     - cron: "33 0 * * *"
+#     - cron: "47 0 * * *"
+#     - cron: "55 0 * * *"
+#     - cron: "15 1 * * *"
+#     - cron: "24 1 * * *"
+#     - cron: "43 1 * * *"
+#     - cron: "52 1 * * *"
+#     - cron: "01 2 * * *"
+
+jobs:
+  build-test-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Login to GitHub Auth
+        run: |
+          echo ${{ secrets.GH_PCA  }} | gh auth login --with-token
+
+      - name: Configure git configuration
+        run: |
+          git config --global user.name "jrbeverly"
+          git config --global user.email "jonathan@jrbeverly.me"
+          git config --global http.sslverify false
+
+      - name: Task available
+        id: status
+        uses: ./.github/actions/has-task
+
+      - name: Select a task
+        id: task
+        if: ${{ steps.status.outputs.available == 'true' }}
+        uses: ./.github/actions/task-select
+
+      - name: Get a task
+        if: ${{ steps.status.outputs.available == 'true' }}
+        run: |
+          echo ${{ steps.task.outputs.file }}

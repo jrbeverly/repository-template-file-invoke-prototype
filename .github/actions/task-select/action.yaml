@@ -1,0 +1,14 @@
+name: 'Select task from directory'
+description: 'Select a task from the directory list'
+outputs:
+  task:
+    description: "The task to do"
+    value: ${{ steps.action.outputs.task_filename }}
+runs:
+  using: "composite"
+  steps:
+    - id: action
+      shell: bash
+      run: |
+        task_filename=$(readlink -f `ls -U tasks/*.json | xargs shuf -n1 -e`)
+        echo "::set-output name=task_filename::$task_filename"

@@ -1,0 +1,8 @@
+{
+  "branch": "repository-metadata",
+  "script": "actions/repository.sh",
+  "title": "docs(repository): Re-sync metadata of repository",
+  "body": "Sync the metadata of the repository from GitHub to catch any new language changes.\n\nSome of the automated changes to the repository have altered how the language composition of the repository. This re-syncs the .repository definition file. When cleaning up the gitlab mirroring, this should also be fixed to remove languages from definition.",
+  "repository": "${line}",
+  "labels": "documentation,chore"
+}

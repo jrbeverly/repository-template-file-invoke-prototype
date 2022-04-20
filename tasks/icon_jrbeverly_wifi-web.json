@@ -1,0 +1,8 @@
+{
+  "branch": "repository-icon",
+  "script": "actions/repository-icon.sh",
+  "title": "docs(icon): Shift location of icon",
+  "body": "Repository level metadata should exist in .repository rather than `docs`.\n\nShifting the repository level metadata into .repository will make it easier for some of my portfolio and other presentation tools to collect the information it needs. Websites or docs that make use of the icon in docs/ at the moment will need to have it removed.\n\nThe rasterized icon can remain, but the source icon is removed to .repository.",
+  "labels": "documentation,chore",
+  "repository": "jrbeverly/wifi-web"
+}

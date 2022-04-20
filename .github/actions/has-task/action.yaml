@@ -1,0 +1,18 @@
+name: 'Has tasks'
+description: 'Determine if tasks are available'
+outputs:
+  available:
+    description: "The task to do"
+    value: ${{ steps.action.outputs.available }}
+runs:
+  using: "composite"
+  steps:
+    - id: action
+      shell: bash
+      run: |
+        if [ ! -n "$(ls -A tasks/*.json 2>/dev/null)" ]
+        then
+          echo "::set-output name=available::false"
+        else
+          echo "::set-output name=available::true"
+        fi
